@@ -1,0 +1,33 @@
+{
+  "name": "lead-api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.2",
+    "dotenv": "^16.5.0",
+    "fastify": "^5.3.3",
+    "nodemailer": "^7.0.3",
+    "pg": "^8.16.0",
+    "postgres": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.18",
+    "@types/nodemailer": "^6.4.17",
+    "@types/pg": "^8.15.1",
+    "jest": "^29.7.0",
+    "prisma": "^6.7.0",
+    "ts-jest": "^29.3.3",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
+  }
+}
