@@ -27,7 +27,7 @@ export const createLeadSchema = {
       description: 'Lead criado com sucesso',
       type: 'object',
       properties: {
-        id: { type: 'number', description: 'ID do lead' },
+        id: { type: 'string', format: "uuid", description: 'ID do lead' },
         name: { type: 'string' },
         email: { type: 'string' }
       }

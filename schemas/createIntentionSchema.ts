@@ -26,7 +26,7 @@ export const createIntentionSchema = {
       description: 'Intenção criada com sucesso',
       type: 'object',
       properties: {
-        id: { type: 'number', description: 'ID da intenção criada' },
+        id: { type: 'string', format: 'uuid', description: 'ID da intenção criada' },
         zipcode_start: { type: 'string' },
         zipcode_end: { type: 'string' }
       }

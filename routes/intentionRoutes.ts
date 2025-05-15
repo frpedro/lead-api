@@ -10,7 +10,7 @@ export async function intentionRoutes(app: FastifyInstance) {
     handler: createIntention // Função que cria uma intenção de frete
   })
 
-  app.put('/intention/{intention_id}', {
+  app.put('/intention/:intention_id', {
     schema: updateIntentionSchema, // Validação e documentação
     handler: updateIntention}) // Função que atualiza uma intenção de frete com lead existente
 } 
