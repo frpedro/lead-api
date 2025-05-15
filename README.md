@@ -76,14 +76,14 @@ API para gerenciamento de leads e intenções de frete, construída com **Node.j
 
 ````bash
 
-	git clone https://github.com/seuusuario/lead-api.git cd lead-api 
+git clone https://github.com/seuusuario/lead-api.git cd lead-api 
 
 ````
 2.  Instale as dependências
     
 
 ````bash
-	npm install 
+npm install 
 ````
 
 3.  Configure as variáveis de ambiente (`.env`)  
@@ -92,12 +92,12 @@ API para gerenciamento de leads e intenções de frete, construída com **Node.j
     
     Exemplo mínimo:
     
-````ini
-
+	````ini
+	
 	DATABASE_URL=postgres://usuario:senha@localhost:5432/nome_do_banco
 	MAIL_USER=seu-email@example.com MAIL_PASS=sua-senha
-
-````
+	
+	````
 
 4.  Crie as tabelas no banco
 
