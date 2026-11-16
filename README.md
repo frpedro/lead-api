@@ -76,7 +76,7 @@ API para gerenciamento de leads e intenções de frete, construída com **Node.j
 
 ````bash
 
-git clone https://github.com/seuusuario/lead-api.git cd lead-api 
+git clone https://github.com/frpedro/lead-api.git cd lead-api 
 
 ````
 2.  Instale as dependências
