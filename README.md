@@ -99,9 +99,8 @@ npm install
 	
 	````
 
-4.  Crie as tabelas no banco
+4.  Crie as tabelas no banco (veja a seção [Como criar as tabelas](#como-criar-as-tabelas) abaixo)
 
-    
 5.  Inicie o servidor:
    
 	`ts-node index.ts` 
@@ -111,6 +110,41 @@ npm install
 	````bash
 	http://localhost:3000/docs 
 	````
+----------
+
+## Como criar as tabelas
+
+O projeto não usa migrations nem ORM: as tabelas devem ser criadas manualmente no banco PostgreSQL apontado por `DATABASE_URL`, antes de iniciar o servidor.
+
+Conecte-se ao banco (ex.: `psql $DATABASE_URL`) e execute os comandos na ordem abaixo:
+
+1.  Habilite a extensão usada para gerar os IDs em UUID:
+
+	````sql
+	CREATE EXTENSION IF NOT EXISTS "pgcrypto";
+	````
+
+2.  Crie a tabela `lead`:
+
+	````sql
+	CREATE TABLE lead (
+	  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+	  name VARCHAR(255) NOT NULL,
+	  email VARCHAR(255) NOT NULL
+	);
+	````
+
+3.  Crie a tabela `intention` (depende de `lead` já existir, por causa da foreign key `lead_id`):
+
+	````sql
+	CREATE TABLE intention (
+	  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+	  zipcode_start VARCHAR(20) NOT NULL,
+	  zipcode_end VARCHAR(20) NOT NULL,
+	  lead_id UUID REFERENCES lead(id)
+	);
+	````
+
 ----------
 
 ## Testes
